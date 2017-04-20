@@ -22,7 +22,8 @@
     <link href="css/plugins/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">4
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,35 +77,28 @@
                            <div class="form-group">
                                 
                                 <label class="checkbox-inline">
-                                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>All
+                                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="All" checked>All
                                 </label>
                                 <label class="checkbox-inline">
-                                     <input type="radio" name="optionsRadios" id="optionsRadios1" value="option2" >Executives
+                                     <input type="radio" name="optionsRadios" id="optionsRadios1" value="Executives" >Executives
                                 </label>
                                 <label class="checkbox-inline">
-                                     <input type="radio" name="optionsRadios" id="optionsRadios1" value="option3" >Customers
+                                     <input type="radio" name="optionsRadios" id="optionsRadios1" value="Customers" >Customers
                                 </label>
                                 <label class="checkbox-inline">
-                                     <input type="radio" name="optionsRadios" id="optionsRadios1" value="option4" >Volenteers
+                                     <input type="radio" name="optionsRadios" id="optionsRadios1" value="Volenteers" >Volenteers
                                 </label>
                             </div>
-                            <div class="form-group">
-                                <label>Selects</label>
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Text area</label>
-                                <textarea class="form-control" rows="3"></textarea>
+                            <div class="col-md-8 col-md-offset-7">
+                               <button type="submit" class="btn btn-default" id="allMail"><i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="" > Send All</a></button> 
+                                 <button type="submit" class="btn btn-default" id="executiveMail"><i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="" > Send To Executives</a></button>
+                                 <button type="submit" class="btn btn-default" id="customerMail"><i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="" > Send To Customers</a></button>
+                                <button type="submit" class="btn btn-default" id="volenteerMail"><i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="" > Send To Volenteers</a></button>
                             </div>
                             
-                             <button type="submit" class="btn btn-success"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send</button>
-                            <button type="reset" class="btn btn-danger"><i class="fa fa-cog " aria-hidden="true"></i>  Reset</button>
+                           
+                            
+                        
                            
 
                         </form>
@@ -121,6 +115,46 @@
 
     </div>
     <!-- /#wrapper -->
+    <script type="text/javascript">
+            $("#allMail").show();
+             $("#executiveMail").hide();
+             $("#customerMail").hide();
+             $("#volenteerMail").hide();
+         $('input:radio[name="optionsRadios"]').change(
+            function() {
+         if ($(this).is(':checked') && $(this).val() == 'All') {
+             // append goes here 
+             
+             $("#allMail").show();
+             $("#executiveMail").hide();
+             $("#customerMail").hide();
+             $("#volenteerMail").hide();
+
+         } else if ($(this).is(':checked') && $(this).val() == 'Executives') {
+           
+             $("#allMail").hide();
+             $("#executiveMail").show();
+             $("#customerMail").hide();
+             $("#volenteerMail").hide();
+
+         } else if ($(this).is(':checked') && $(this).val() == 'Customers') {
+            
+             $("#allMail").hide();
+             $("#executiveMail").hide();
+             $("#customerMail").show();
+             $("#volenteerMail").hide();
+
+         } else if ($(this).is(':checked') && $(this).val() == 'Volenteers') {
+           
+              
+            $("#allMail").hide();
+             $("#executiveMail").hide();
+             $("#customerMail").hide();
+             $("#volenteerMail").show();
+
+         }
+     });
+      </script>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

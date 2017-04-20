@@ -164,7 +164,9 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel</h3>
+                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel                                    
+                                 <button style="margin-left: 40%;" class="btn btn-default fa fa-plus-circle" onclick="guestEdit()" value="add">  ADD</button>
+                                </h3>
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
@@ -174,8 +176,9 @@
                                                 <th>Guest ID#</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
-                                                <th>Number</th>
+                                                <th>Number</th>                                                
                                                 <th>Message</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -186,6 +189,14 @@
                                                 <td><?php echo $guest_list[$i]['EMAIL'] ?></td>
                                                 <td><?php echo $guest_list[$i]['MOB'] ?></td>
                                                 <td><?php echo $guest_list[$i]['MESSAGE'] ?></td>
+                                                <td>
+                                                    <button type="button" class="btn  btn-success fa fa-edit"
+                                                             onclick="guestEdit(<?php echo $guest_list[$i]['GID'] ?>)">
+                                                    </button>
+                                                    <button type="button" class="btn  btn-primary fa fa-eye" 
+                                                            onclick="guestView(<?php echo $guest_list[$i]['GID'] ?>)">
+                                                    </button>
+                                                </td>
                                             </tr>
                                         <?php } ?>
                                            
@@ -207,7 +218,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-info-circle" aria-hidden="true"></i> Executive List
-                                 <button style="margin-left: 40%;" class="btn btn-default fa fa-plus-circle" onclick="customerEdit()" value="add">  ADD</button>
+                                 <button style="margin-left: 40%;" class="btn btn-default fa fa-plus-circle" onclick="executiveEdit()" value="add">  ADD</button>
                                  </h3>
                             </div>
                             <div class="panel-body">
@@ -236,10 +247,10 @@
                                                 <td><?php echo $exe_list[$i]['ADDR']."<br>".$exe_list[$i]['CITY']."<br>".$exe_list[$i]['STATE'] ?></td>
                                                 <td>
                                                     <button type="button" class="btn  btn-success fa fa-edit"
-                                                             onclick="customerEdit(<?php echo $exe_list[$i]['SEID'] ?>)">
+                                                             onclick="executiveEdit(<?php echo $exe_list[$i]['SEID'] ?>)">
                                                     </button>
                                                     <button type="button" class="btn  btn-primary fa fa-eye" 
-                                                            onclick="customerView(<?php echo $exe_list[$i]['SEID'] ?>)">
+                                                            onclick="executiveView(<?php echo $exe_list[$i]['SEID'] ?>)">
                                                     </button>
                                                 </td>
                                             </tr>
@@ -263,7 +274,30 @@
 
     </div>
     <!-- /#wrapper -->
+      <script type="text/javascript">
+        function guestEdit($vid){
 
+           console.log($vid); 
+           window.open("view/guest_edit.php?vid="+$vid,"_self")
+          
+        }
+        function guestView($vid){
+           console.log($vid); 
+            window.open("view/guest_view.php?vid="+$vid,"_self")
+        }
+
+        function executiveEdit($vid){
+
+           console.log($vid); 
+           window.open("view/executive_edit.php?vid="+$vid,"_self")
+          
+        }
+        function executiveView($vid){
+           console.log($vid); 
+            window.open("view/executive_view.php?vid="+$vid,"_self")
+        }
+        
+    </script>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
