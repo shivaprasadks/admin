@@ -22,7 +22,7 @@
     <link href="css/plugins/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">4
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

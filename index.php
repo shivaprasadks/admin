@@ -23,13 +23,20 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
+    <![endif]-->
+<style type="text/css">
+    .searchbar {
+        padding: 2px 0 40px 0;
+    }
+</style>
 </head>
 
 <body>
@@ -156,7 +163,34 @@
                 </div>
                 <!-- /.row -->
 
-                
+                <div class="searchbar panel panel-default">
+                    <div class="col-md-12 panel-heading ">
+                        <form method="POST" action="search.php" >
+                            <input type="text" name="searchbox">
+                            <div class="form-group" style="margin-top: 20px;">
+                                
+                                <label class="checkbox-inline">
+                                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="All" checked>Customer Order
+                                </label>
+                                <label class="checkbox-inline">
+                                     <input type="radio" name="optionsRadios" id="optionsRadios1" value="Executives" >Executives
+                                </label>
+                                <label class="checkbox-inline">
+                                     <input type="radio" name="optionsRadios" id="optionsRadios1" value="Customers" >Executive Order
+                                </label>
+                                <label class="checkbox-inline">
+                                     <input type="radio" name="optionsRadios" id="optionsRadios1" value="Volenteers" >Volenteers
+                                </label>
+                            </div>
+                            <div class="col-md-8 col-md-offset-7">
+                               <button type="submit" class="btn btn-default" id="allMail"><i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="" > Send All</a></button> 
+                                 <button type="submit" class="btn btn-default" id="executiveMail"><i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="" > Send To Executives</a></button>
+                                 <button type="submit" class="btn btn-default" id="customerMail"><i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="" > Send To Customers</a></button>
+                                <button type="submit" class="btn btn-default" id="volenteerMail"><i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="" > Send To Volenteers</a></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
                 <div class="row">
                     
@@ -211,6 +245,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <!-- /.row -->
                 <div class="row">
                   
@@ -274,6 +309,46 @@
 
     </div>
     <!-- /#wrapper -->
+     <script type="text/javascript">
+            $("#allMail").show();
+             $("#executiveMail").hide();
+             $("#customerMail").hide();
+             $("#volenteerMail").hide();
+         $('input:radio[name="optionsRadios"]').change(
+            function() {
+         if ($(this).is(':checked') && $(this).val() == 'All') {
+             // append goes here 
+             
+             $("#allMail").show();
+             $("#executiveMail").hide();
+             $("#customerMail").hide();
+             $("#volenteerMail").hide();
+
+         } else if ($(this).is(':checked') && $(this).val() == 'Executives') {
+           
+             $("#allMail").hide();
+             $("#executiveMail").show();
+             $("#customerMail").hide();
+             $("#volenteerMail").hide();
+
+         } else if ($(this).is(':checked') && $(this).val() == 'Customers') {
+            
+             $("#allMail").hide();
+             $("#executiveMail").hide();
+             $("#customerMail").show();
+             $("#volenteerMail").hide();
+
+         } else if ($(this).is(':checked') && $(this).val() == 'Volenteers') {
+           
+              
+            $("#allMail").hide();
+             $("#executiveMail").hide();
+             $("#customerMail").hide();
+             $("#volenteerMail").show();
+
+         }
+     });
+      </script>
       <script type="text/javascript">
         function guestEdit($vid){
 
