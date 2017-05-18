@@ -106,21 +106,30 @@ body {
 <div class="login-page">
   <div class="form">
     
-    <form class="login-form">
-      <input type="text" name="myuserid" placeholder="username"/>
-      <input type="password" name="mypswrd" placeholder="password"/>
+    <div class="login-form">
+      <input type="text" id="username" name="myuserid" placeholder="username"/>
+      <input type="password" id="password" name="mypswrd" placeholder="password"/>
       <button onclick="check()"  >login</button>
       <p class="message">Not registered? <a href="#">Create an account</a></p>
-    </form>
+    </div>
   </div>
 </div>
 <script language="javascript">
-function check(form)/*function to check userid & password*/
+function check()/*function to check userid & password*/
 {
  /*the following code checkes whether the entered userid and password are matching*/
- if(document.getElementByName("myuserid").value == "myuserid" && document.getElementByName("mypswrd").value == "mypswrd")
+ if(document.getElementById("username").value == "preetham" && document.getElementById("password").value == "123")
   {
-    window.open('home.php')/*opens the target page while Id & password matches*/
+<?php 
+    session_start();
+    $_SESSION["user"] = "set";
+
+?>
+
+   // window.open('index.php');
+
+    
+   window.location.href = 'index.php';/*opens the target page while Id & password matches*/
   }
  else
  {

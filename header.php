@@ -40,7 +40,7 @@
                         
                        
                         <li>
-                            <a href="login.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="login.php"><?php session_destroy(); ?><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>

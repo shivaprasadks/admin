@@ -69,7 +69,7 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="../index.php">Dashboard</a>
                             </li>
                             <li >
                                 <i class="fa fa-info"></i>  <a href="../information.php">Information</a>
@@ -110,7 +110,7 @@
                                     </div>
                                      <div class="col-md-3">
                                         <h4> <?php echo $guest_list[1]['EMAIL'] ?> 
-                                        <button type="button" class="btn small btn-primary fa fa-paper-plane"></button></h4>
+                                         <button type="button" class="btn small btn-primary fa fa-paper-plane" onclick="sendMyMail('<?php echo $guest_list[1]['EMAIL'] ?>','<?php echo $guest_list[1]['NAME'] ?>')"></button></h4>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -156,7 +156,10 @@
            console.log($vid); 
             window.open("company_view.php?vid="+$vid,"_self")
         }
-        
+         function sendMyMail($mymailId,$name){
+            //console.log("click");
+             window.open("mailto:"+$mymailId+"?Subject=Hello%20"+$name,"_top")
+        }
     </script>
 
     <!-- jQuery -->

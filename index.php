@@ -183,10 +183,10 @@
                                 </label>
                             </div>
                             <div class="col-md-8 col-md-offset-7">
-                               <button type="submit" class="btn btn-default" id="allMail"><i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="" > Send All</a></button> 
-                                 <button type="submit" class="btn btn-default" id="executiveMail"><i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="" > Send To Executives</a></button>
-                                 <button type="submit" class="btn btn-default" id="customerMail"><i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="" > Send To Customers</a></button>
-                                <button type="submit" class="btn btn-default" id="volenteerMail"><i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="" > Send To Volenteers</a></button>
+                               <button type="submit" class="btn btn-default" id="allMail"><i class="fa fa-search" aria-hidden="true"></i> <a href="" > Search</a></button> 
+                                 <button type="submit" class="btn btn-default" id="executiveMail"><i class="fa fa-search" aria-hidden="true"></i> <a href="" > Search</a></button>
+                                 <button type="submit" class="btn btn-default" id="customerMail"><i class="fa fa-search" aria-hidden="true"></i> <a href="" > Search</a></button>
+                                <button type="submit" class="btn btn-default" id="volenteerMail"><i class="fa fa-search" aria-hidden="true"></i> <a href="" > Search</a></button>
                             </div>
                         </form>
                     </div>

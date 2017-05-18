@@ -75,16 +75,16 @@
 
                             <div class="form-group input-group">
                                 <span class="input-group-addon">+91</span>
-                                <input type="text" class="form-control" placeholder="Phone Number">
+                                <input type="text" class="form-control" placeholder="Phone Number" required>
                             </div>
                             <div class="form-group">
                                 <label>Selects</label>
                                 <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    <option>All</option>
+                                    <option>Executives</option>
+                                    <option>Customers</option>
+                                    <option>Volunteer</option>
+                                    <option>Custom</option>
                                 </select>
                             </div>
                             <div class="form-group">

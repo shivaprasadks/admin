@@ -108,7 +108,7 @@
                                     </div>
                                      <div class="col-md-4">
                                         <h4> <?php echo $guest_list[1]['EMAIL'] ?> 
-                                        <a href="mailto:<?php echo $guest_list[1]['EMAIL'] ?>?Subject=WePlanTree%20Mail&body=Hello%20<?php echo $guest_list[1]['NAME'] ?>", target="_top">Send Mail</a></h4>
+                                         <button type="button" class="btn small btn-primary fa fa-paper-plane" onclick="sendMyMail('<?php echo $guest_list[1]['EMAIL'] ?>','<?php echo $guest_list[1]['NAME'] ?>')"></button></h4>
 
                                     </div>
                                 </div>
@@ -193,11 +193,11 @@
           
         }
 
-        function myEmail($emailVar){
-           // window.open("mailto:someone@example.com,someone@example.com?Subject=Hello%20again","_top");
-             location.href  = "mailto:someone@example.com,someone@example.com?Subject=Hello%20again";
+        
+        function sendMyMail($mymailId,$name){
+            //console.log("click");
+             window.open("mailto:"+$mymailId+"?Subject=Hello%20"+$name,"_top")
         }
-       
         
     </script>
 
